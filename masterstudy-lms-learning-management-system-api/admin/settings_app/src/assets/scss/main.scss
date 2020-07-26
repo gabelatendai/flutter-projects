@@ -1,0 +1,82 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/buttons";
+
+.toplevel_page_ms_lms_api_options {
+
+    #wpbody-content {
+        > *:not(#app) {
+            display: none;
+        }
+
+        #app {
+            margin: 40px 20px 40px 0;
+        }
+    }
+
+}
+
+.stm_lms_app_blocks {
+    max-width: 250px;
+
+    .inner {
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+        &.loading {
+            &:after {
+                visibility: visible;
+                opacity: 1;
+                background-color: rgba(241,241,241,.5);
+            }
+        }
+    }
+
+    .list-group {
+        margin: 0 0 20px;
+
+        .list-group-item {
+            position: relative;
+            opacity: .5;
+
+            label {
+                position: relative;
+                top: -1px;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .enableBlock {
+                padding: 2px 5px;
+                position: absolute;
+                right: 5px;
+                top: 11px;
+                font-size: 12px;
+                background-color: #f1f1f1;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            &.enabled {
+                opacity: 1;
+
+                .enableBlock {
+                    background-color: #7daeea;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}
